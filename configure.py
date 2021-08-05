@@ -3359,8 +3359,8 @@ def do_io_for_build(cc, arch, osinfo, using_mods, build_paths, source_paths, tem
             try:
                 portable_symlink(header_file, directory, link_method)
             except OSError as e_m:
-                if e_l.errno != errno.EEXIST:
-                    raise UserError('Error linking %s into %s: %s' % (header_file, directory, e_l))
+                if e_m.errno != errno.EEXIST:
+                    raise UserError('Error linking %s into %s: %s' % (header_file, directory, e_m))
 
     link_headers(build_paths.public_headers, 'public',
                  build_paths.botan_include_dir)
